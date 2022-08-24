@@ -102,38 +102,45 @@
 #              yield row # dooone doone mindazim biroon
 
 
-def process(path):
-    lss=[]
-    def csv_reader(path):
-        with open(path) as file:
-            for row in file:  # read nakarde k !!??? soal konam
-                # print(row)
-                row = row.split(',')
-                # print(row)
-                p = row.pop()
-                p = p.split('\n')
-                row.append(p[0])
-                yield row  # dooone doone mindazim biroon
+# def process(path):
+#     lss=[]
+#     def csv_reader(path):
+#         with open(path) as file:
+#             for row in file:  # read nakarde k !!??? soal konam
+#                 # print(row)
+#                 row = row.split(',')
+#                 # print(row)
+#                 p = row.pop()
+#                 p = p.split('\n')
+#                 row.append(p[0])
+#                 yield row  # dooone doone mindazim biroon
+#
+#     for i in csv_reader(path):
+#         ls=[]
+#         s = ""
+#         # print(i)
+#         for j in i :
+#             ls.append((int(j)))
+#         # print(ls)
+#         ls.append(sum(ls))
+#         # print(ls)
+#         for k in ls :
+#             s = s + str(k)+','
+#             # print(s,end='')
+#             # print(type(s))
+#         s = s.removesuffix(',')
+#         # print(s)
+#         lss.append(s)
+#         # print(lss)
+#     with open("ans.txt","w") as ans :
+#         for u in lss :
+#             ans.write(u+'\n')
+#
+# process("vorooodi.csv")
 
-    for i in csv_reader(path):
-        ls=[]
-        s = ""
-        # print(i)
-        for j in i :
-            ls.append((int(j)))
-        # print(ls)
-        ls.append(sum(ls))
-        # print(ls)
-        for k in ls :
-            s = s + str(k)+','
-            # print(s,end='')
-            # print(type(s))
-        s = s.removesuffix(',')
-        # print(s)
-        lss.append(s)
-        # print(lss)
-    with open("ans.txt","w") as ans :
-        for u in lss :
-            ans.write(u+'\n')
+# kar ba OS
+import os
 
-process("vorooodi.csv")
+print("this is " + os.getcwd())
+os.chdir("./test") #ja be jaiie eshare gar
+print(os.listdir()) #تمام فایل‌ها و پوشه‌هایی که به طور مستقیم در پوشه‌ مورد اشاره‌ی اشاره‌گر قرار دارند را به دست آورد.
